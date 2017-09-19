@@ -4,6 +4,9 @@ Load Javascript data, render using three.js, and save the canvas to a
 png. Additionally supplies a utility for converting a specific `.npy` 
 format to Javascript.
 
+![2011_09_26_0001](https://user-images.githubusercontent.com/2068077/30610372-cbb0fe3a-9d32-11e7-8dd5-6902e25258dc.gif)
+*LiDAR data and images belong to the KITTI dataset's copyright holders.*
+
 > Note that this repository isn't general at all. You'll probably need to hack it for your own purposes. I've done the heavy lifting (i.e., mixed and matched from the relevant Three.js docs) to render the point cloud though. 
 
 # Usage
