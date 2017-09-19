@@ -1,0 +1,4 @@
+[submodule "antsy3d"]
+	path = antsy3d
+	url = git@github.com:alvinwan/antsy3d.git
+	branch = pc2vid
