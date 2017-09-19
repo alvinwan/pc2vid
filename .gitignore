@@ -2,6 +2,8 @@
 data
 output
 js/output.js
+*.gif
+.idea
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
