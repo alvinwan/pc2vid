@@ -4,9 +4,12 @@ Assumes numpy matrices are nx8 where first 3 columns contain x, y, z
 respectively. Checks for `data/*.npy` by default, below. Uses the filename,
 stripped, for the data dictionary key.
 
+Remember that classes 1, 2, 3 are colored red, green, blue respectively.
+All other classes are colored grey.
+
 Usage:
     to_json.py
-    to_json.py <start> <end>
+    to_json.py <folder> <start> <end>
 """
 
 
@@ -16,10 +19,10 @@ import json
 import numpy as np
 import sys
 
-start, end = 0, 50
+folder, start, end = '0005_pred', 0, 50
 arguments = sys.argv
-if len(arguments) == 3:
-    start, end = map(int, arguments[1:])
+if len(arguments) == 4:
+    folder, (start, end) = arguments[1], map(int, arguments[2:])
 
 
 def convert(format):
@@ -37,7 +40,8 @@ def convert(format):
 
 
 def main():
-    convert('data/0001_gt/*.npy')
+    print('Read from', folder)
+    convert('data/%s/*.npy' % folder)
 
 
 if __name__ == '__main__':

@@ -16,9 +16,17 @@ format to Javascript.
 ```
 git clone --recursive git@github.com:alvinwan/pc2vid.git
 ```
+
+## General Usage 
 2. Create a new `js/output.js` file with the structure described in `Point Cloud Format` below. This should match the format described at [antsy3d](https://github.com/alvinwan/antsy3d#point-cloud-format). The latter takes precedence.
 3. Open `js_to_png.html` in your browser. The app will begin saving frames as PNGs every half-second. The PNG filename will match the key provided in the original data dictionary. The example from `Point Cloud Format`, for example, would output `frog.png`.
 4. Run the `png_to_mp4.sh` bash script. (`ffmpeg`)
+
+## Pallas-Specific Usage
+
+2. Download `.npy` files to `data/<dataset>`. (For example, you could have `data/0001_pred/{000000000,0000000001...}.npy`) Make sure all files match `%10d.npy`.
+3. Run `python to_json.py <dataset> <start> <end>`. There's too much data to load at once, so we have to split up, say, 159 images, into chunks of ~40. (e.g., run `python to_json.py 0001_pred 0 40`. Do next step, then `python to_json.py 0001_pred 40 80`...)
+4. Open `js_to_png.html` in your browser. This will render and download each image.
 
 ## Point Cloud Format
 
